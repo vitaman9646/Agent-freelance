@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# CashClaw data
+.cashclaw/
+agents/**/.cashclaw/
+*.json.backup
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+pm2-*.log
+pm2-*.pid
+
+# Analytics
+analytics/
+*.db
+*.sqlite
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Secrets
+wallets/
+private-keys/
+secrets/
+*.key
+*.pem
+
+# Build
+dist/
+build/
