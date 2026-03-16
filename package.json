@@ -1,0 +1,24 @@
+{
+  "name": "cashclaw-farm",
+  "version": "0.1.0",
+  "description": "Multi-agent CashClaw farm with intelligent bidding",
+  "private": true,
+  "scripts": {
+    "setup": "bash scripts/setup.sh",
+    "start": "pm2 start ecosystem.config.js",
+    "stop": "pm2 stop all",
+    "restart": "pm2 restart all",
+    "logs": "pm2 logs",
+    "monitor": "pm2 monit",
+    "status": "pm2 status",
+    "deploy": "bash scripts/deploy.sh"
+  },
+  "dependencies": {
+    "pm2": "^5.3.0",
+    "dotenv": "^16.4.5",
+    "node-fetch": "^2.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
