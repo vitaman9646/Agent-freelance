@@ -1,0 +1,61 @@
+{
+  "providers": {
+    "openrouter": {
+      "baseURL": "https://openrouter.ai/api/v1",
+      "enabled": true,
+      "models": {
+        "claude-sonnet-4": {
+          "id": "anthropic/claude-sonnet-4-20250514",
+          "contextWindow": 200000,
+          "maxTokens": 8192,
+          "pricing": {
+            "input": 3.0,
+            "output": 15.0
+          }
+        },
+        "gpt-4o": {
+          "id": "openai/gpt-4o",
+          "contextWindow": 128000,
+          "maxTokens": 4096,
+          "pricing": {
+            "input": 2.5,
+            "output": 10.0
+          }
+        },
+        "gpt-4o-mini": {
+          "id": "openai/gpt-4o-mini",
+          "contextWindow": 128000,
+          "maxTokens": 16384,
+          "pricing": {
+            "input": 0.15,
+            "output": 0.6
+          }
+        }
+      }
+    }
+  },
+  "taskTypeMapping": {
+    "content_writing": "claude-sonnet-4",
+    "blog_post": "claude-sonnet-4",
+    "code_review": "claude-sonnet-4",
+    "typescript": "claude-sonnet-4",
+    "javascript": "claude-sonnet-4",
+    "research": "claude-sonnet-4",
+    "data_analysis": "gpt-4o",
+    "self_review": "gpt-4o-mini",
+    "quality_check": "gpt-4o-mini"
+  },
+  "autoRoute": {
+    "enabled": true,
+    "costThreshold": 0.5,
+    "complexityThreshold": 7
+  },
+  "fallback": {
+    "enabled": true,
+    "order": [
+      "anthropic/claude-sonnet-4",
+      "openai/gpt-4o",
+      "openai/gpt-4o-mini"
+    ]
+  }
+}
