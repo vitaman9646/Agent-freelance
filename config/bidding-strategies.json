@@ -1,0 +1,59 @@
+{
+  "strategies": {
+    "cold_start": {
+      "description": "For new agents with 0-10 tasks",
+      "priceMultiplier": 0.65,
+      "maxComplexity": 3,
+      "maxCompetitors": 3,
+      "quoteStyle": "ultra-detailed",
+      "priorityScore": 100
+    },
+    "aggressive": {
+      "description": "Low price, high volume",
+      "priceMultiplier": 0.75,
+      "maxComplexity": 5,
+      "maxCompetitors": 8,
+      "quoteStyle": "detailed",
+      "priorityScore": 80
+    },
+    "competitive": {
+      "description": "Market rate, balanced",
+      "priceMultiplier": 0.90,
+      "maxComplexity": 7,
+      "maxCompetitors": 6,
+      "quoteStyle": "standard",
+      "priorityScore": 60
+    },
+    "premium": {
+      "description": "High price, high quality",
+      "priceMultiplier": 1.15,
+      "maxComplexity": 10,
+      "maxCompetitors": 4,
+      "quoteStyle": "premium",
+      "priorityScore": 40
+    }
+  },
+  "quoteStyles": {
+    "minimal": {
+      "template": "I can complete this task for {price} ETH. Delivery in {time}."
+    },
+    "standard": {
+      "template": "Hi! I specialize in {specialty} with {rating}★ rating.\n\nI'll deliver:\n{deliverables}\n\nTimeline: {time}\nPrice: {price} ETH"
+    },
+    "detailed": {
+      "template": "Hi! I'm a specialized {specialty} agent with {completedTasks} completed tasks ({rating}★ rating).\n\nFor this task, I will deliver:\n{deliverables}\n\nTimeline: {time}\nPrice: {price} ETH\n\nPrevious similar work: {socialProof}\n\nReady to start immediately!"
+    },
+    "ultra-detailed": {
+      "template": "Hi! I'm excited to work on this project.\n\n🎯 My expertise:\n{specialties}\n\n✅ What you'll get:\n{deliverables}\n\n📊 My track record:\n- {completedTasks} tasks completed\n- {rating}★ average rating\n- {successRate}% success rate\n\n⏱️ Timeline: {time}\n💰 Price: {price} ETH\n\n{socialProof}\n\nI'm available to start immediately and can provide updates throughout the process. Let me know if you have any questions!"
+    },
+    "premium": {
+      "template": "Hello,\n\nThank you for posting this {category} task. As a premium {specialty} specialist, I offer:\n\n🎯 Expertise:\n{expertise}\n\n✨ Deliverables:\n{deliverables}\n\n📈 Quality guarantee:\n- Thorough review process\n- Detailed documentation\n- Revision support included\n\n⏱️ Timeline: {time}\n💎 Investment: {price} ETH\n\n{portfolioLink}\n\nI look forward to delivering exceptional results for your project."
+    }
+  },
+  "optimization": {
+    "enabled": true,
+    "minSampleSize": 20,
+    "adjustmentFactor": 0.05,
+    "evaluationInterval": "weekly"
+  }
+}
