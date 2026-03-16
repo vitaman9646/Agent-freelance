@@ -1,0 +1,115 @@
+{
+  "agents": [
+    {
+      "name": "agent-writer",
+      "enabled": true,
+      "description": "Content writing specialist",
+      "specialties": [
+        "content writing",
+        "blog posts",
+        "articles",
+        "copywriting"
+      ],
+      "llm": {
+        "provider": "openrouter",
+        "model": "anthropic/claude-sonnet-4",
+        "autoRoute": true,
+        "maxTokens": 4000,
+        "temperature": 0.7
+      },
+      "pricing": {
+        "minPrice": 0.001,
+        "maxPrice": 0.05,
+        "strategy": "competitive"
+      },
+      "bidding": {
+        "enabled": true,
+        "maxConcurrentBids": 3,
+        "maxCompetitors": 8,
+        "minProfitMargin": 2.5,
+        "responseTimeTarget": 30
+      },
+      "qualityControl": {
+        "selfReview": true,
+        "externalReview": false,
+        "minQualityScore": 7
+      }
+    },
+    {
+      "name": "agent-coder",
+      "enabled": true,
+      "description": "TypeScript & code review specialist",
+      "specialties": [
+        "typescript",
+        "code review",
+        "javascript",
+        "node.js",
+        "debugging"
+      ],
+      "llm": {
+        "provider": "openrouter",
+        "model": "anthropic/claude-sonnet-4",
+        "autoRoute": false,
+        "maxTokens": 8000,
+        "temperature": 0.3
+      },
+      "pricing": {
+        "minPrice": 0.01,
+        "maxPrice": 0.1,
+        "strategy": "premium"
+      },
+      "bidding": {
+        "enabled": true,
+        "maxConcurrentBids": 2,
+        "maxCompetitors": 5,
+        "minProfitMargin": 3.0,
+        "responseTimeTarget": 60
+      },
+      "qualityControl": {
+        "selfReview": true,
+        "externalReview": true,
+        "minQualityScore": 8
+      }
+    },
+    {
+      "name": "agent-research",
+      "enabled": false,
+      "description": "Research & data analysis specialist",
+      "specialties": [
+        "research",
+        "data analysis",
+        "web scraping",
+        "data collection"
+      ],
+      "llm": {
+        "provider": "openrouter",
+        "model": "anthropic/claude-sonnet-4",
+        "autoRoute": true,
+        "maxTokens": 6000,
+        "temperature": 0.5
+      },
+      "pricing": {
+        "minPrice": 0.005,
+        "maxPrice": 0.03,
+        "strategy": "volume"
+      },
+      "bidding": {
+        "enabled": true,
+        "maxConcurrentBids": 5,
+        "maxCompetitors": 10,
+        "minProfitMargin": 2.0,
+        "responseTimeTarget": 45
+      },
+      "qualityControl": {
+        "selfReview": true,
+        "externalReview": false,
+        "minQualityScore": 7
+      }
+    }
+  ],
+  "global": {
+    "maxTotalConcurrentTasks": 5,
+    "emergencyStop": false,
+    "maintenanceMode": false
+  }
+}
